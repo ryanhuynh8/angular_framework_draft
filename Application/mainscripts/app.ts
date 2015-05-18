@@ -6,7 +6,7 @@ import IRouteProvider = angular.route.IRouteProvider;
 class MainAppController {
     message: string;
 
-    static $inject = [                
+    static $inject = [            
     ];
 
     constructor() {
@@ -36,7 +36,8 @@ class MainApp {
     }
 
     private registerController(name: string) {
-        this.app.controller(`${name}Controller`, MainAppController);
+        var consFunc = eval(`${name }Controller`);
+        this.app.controller(`${name}Controller`, consFunc);
     }
 
 }

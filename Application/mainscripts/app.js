@@ -22,7 +22,8 @@ var MainApp = (function () {
         });
     };
     MainApp.prototype.registerController = function (name) {
-        this.app.controller(name + "Controller", MainAppController);
+        var consFunc = eval(name + "Controller");
+        this.app.controller(name + "Controller", consFunc);
     };
     MainApp.moduleList = ['MainApp'];
     return MainApp;
