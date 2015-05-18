@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @*@Scripts.Render("~/bundles/modernizr")*@    
+</head>
+<body>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/angular-ui-bootstrap.js"></script>
+    <!--Underscore-->
+    <script src="~/Scripts/underscore/underscore-min.js"></script>    
+
+    @*<script src="/Scripts/require.js" data-main="/Application/mainscripts/app"></script>*@
+    <script src="~/Application/mainscripts/app.js"></script>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Application name", "Index", "Home", null, new {@class = "navbar-brand"})
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href='#/home/'>Home</a></li>
+                <li><a href='#/home/about'>About Us </a></li>
+                <li><a href='#/home/contact'>Contact</a></li>
+                <li><a href='#/home/customer'>Customer</a>
+                    <ul style="display: block;" class="dropdown-menu">
+                        <li><a class="" href="#/customers/">Customers</a></li>
+                        <li><a class="" href="#/customers/orders">Orders</a></li>
+                    </ul>
+                </li>
+                <li><a href='test.html'>Test</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+@RenderBody()
+<div ng-app="MainApp">
+    @*<div ng-controller="MainAppController as ctrl">
+        {{ ctrl.message }}            
+    </div>*@
+    <div ng-view></div>
+</div>
+</body>
+</html>

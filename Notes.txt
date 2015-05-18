@@ -1,0 +1,15 @@
+﻿================================================================
+-------------------------Jasmine--------------------------------
++ jasmine-ajax - Faking Ajax responses in your Jasmine suite. https://github.com/jasmine/jasmine-ajax
++ A JavaScript Testing Framework https://github.com/jasmine/jasmine
++ introduction.js http://jasmine.github.io/edge/introduction.html     http://jasmine.github.io/
+
+
+================================================================
+-----------------------Understanding Providers, Services, and Factories in Angular---------------------
++ http://csharperimage.jeremylikness.com/2014/01/understanding-providers-services-and.html
++ http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/
++ http://www.dotnet-tricks.com/Tutorial/angularjs/V2YS090914-Understanding-AngularJS-Factory,-Service-and-Provider.html
+
+
+================================================================
