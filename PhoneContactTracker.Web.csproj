@@ -191,7 +191,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Application\mainscripts\mainApp.html" />
     <Content Include="Application\modules\customers\controllers\customers\customersController.bak.js" />
     <Content Include="Application\modules\customers\views\customers\customerEdit.html" />
     <Content Include="Application\modules\customers\views\customers\customerOrders.html" />

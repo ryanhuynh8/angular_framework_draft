@@ -6,11 +6,11 @@ import IRouteProvider = angular.route.IRouteProvider;
 class MainAppController {
     message: string;
 
-    static $inject = [             
+    static $inject = [
     ];
 
-    constructor() {        
-        this.message = "Welcome!";
+    constructor() {
+        this.message = "Ryan!";
     }
 }
 
@@ -19,25 +19,18 @@ class MainApp {
     private mainController: MainAppController;
 
     constructor() {
-        this.app = angular.module("MainApp", []);
-        this.registerController();        
+        this.app = angular.module("MainApp", ["ngRoute"]);
+        this.registerController();
         this.registerRoute();
     }
 
     private registerRoute() {
-        this.app.config([
-            '$routeProvider', $routeProvider => {
-                $routeProvider.when('/test', { templateUrl: "/mainApp.html", controller: MainAppController });
-            }
-        ]);
-
-        this.app.config(function ($routeProvider) {
-            $routeProvider
-                .when('/this', { templateUrl: '/mainApp.html' });
+        this.app.config($routeProvider => {
+            $routeProvider.when('/test', { templateUrl: "/mainApp.html", controller: 'MainAppController', controllerAs: "ctrl" });
         });
     }
     private registerController() {
-        this.app.controller("MainAppController", MainAppController);        
+        this.app.controller("MainAppController", MainAppController);
     }
 
 }

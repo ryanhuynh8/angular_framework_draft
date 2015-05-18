@@ -2,26 +2,20 @@
 /// <reference path="../../scripts/typings/angularjs/angular-route.d.ts" />
 var MainAppController = (function () {
     function MainAppController() {
-        this.message = "Welcome!";
+        this.message = "Ryan!";
     }
     MainAppController.$inject = [];
     return MainAppController;
 })();
 var MainApp = (function () {
     function MainApp() {
-        this.app = angular.module("MainApp", []);
+        this.app = angular.module("MainApp", ["ngRoute"]);
         this.registerController();
         this.registerRoute();
     }
     MainApp.prototype.registerRoute = function () {
-        this.app.config([
-            '$routeProvider', function ($routeProvider) {
-                $routeProvider.when('/test', { templateUrl: "/mainApp.html", controller: MainAppController });
-            }
-        ]);
         this.app.config(function ($routeProvider) {
-            $routeProvider
-                .when('/this', { templateUrl: '/mainApp.html' });
+            $routeProvider.when('/test', { templateUrl: "/mainApp.html", controller: 'MainAppController', controllerAs: "ctrl" });
         });
     };
     MainApp.prototype.registerController = function () {
