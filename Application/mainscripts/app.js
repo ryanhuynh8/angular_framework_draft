@@ -1,10 +1,12 @@
 /// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../scripts/typings/angularjs/angular-route.d.ts" />
 var MainAppController = (function () {
-    function MainAppController() {
+    function MainAppController($scope) {
         this.message = "Ryan!";
     }
-    MainAppController.$inject = [];
+    MainAppController.$inject = [
+        '$scope'
+    ];
     return MainAppController;
 })();
 var MainApp = (function () {
@@ -21,6 +23,7 @@ var MainApp = (function () {
     MainApp.prototype.registerController = function () {
         this.app.controller("MainAppController", MainAppController);
     };
+    MainApp.moduleList = ['MainApp'];
     return MainApp;
 })();
 new MainApp();

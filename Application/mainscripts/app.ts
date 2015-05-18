@@ -7,9 +7,10 @@ class MainAppController {
     message: string;
 
     static $inject = [
+        '$scope'
     ];
 
-    constructor() {
+    constructor($scope) {
         this.message = "Ryan!";
     }
 }
@@ -17,6 +18,8 @@ class MainAppController {
 class MainApp {
     public app: ng.IModule;
     private mainController: MainAppController;
+
+    static moduleList = ['MainApp'];
 
     constructor() {
         this.app = angular.module("MainApp", ["ngRoute"]);
