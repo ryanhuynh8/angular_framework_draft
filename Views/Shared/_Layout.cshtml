@@ -37,18 +37,16 @@
                         <li><a class="" href="#/customers/">Customers</a></li>
                         <li><a class="" href="#/customers/orders">Orders</a></li>
                     </ul>
-                </li>
-                <li><a href='test.html'>Test</a></li>
+                </li>                
             </ul>
         </div>
     </div>
 </div>
 @RenderBody()
 <div ng-app="MainApp">
-    <div ng-controller="MainAppController as ctrl">
-        {{ ctrl.message }}            
+    <div ng-view>
+        Alo
     </div>
-    <div ng-view></div>
 </div>
 </body>
 </html>

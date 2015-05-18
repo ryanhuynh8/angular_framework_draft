@@ -1,32 +1,32 @@
 /// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../scripts/typings/angularjs/angular-route.d.ts" />
 var MainAppController = (function () {
-    function MainAppController($scope) {
+    function MainAppController() {
         this.message = "Ryan!";
     }
-    MainAppController.$inject = [
-        '$scope'
-    ];
+    MainAppController.$inject = [];
     return MainAppController;
 })();
 var MainApp = (function () {
     function MainApp() {
         this.app = angular.module("MainApp", ["ngRoute"]);
-        this.registerController();
-        this.registerRoute();
+        this.loadModule("MainApp");
     }
-    MainApp.prototype.registerRoute = function () {
+    MainApp.prototype.loadModule = function (name) {
+        this.registerController(name);
+        this.registerRoute(name);
+    };
+    MainApp.prototype.registerRoute = function (name) {
         this.app.config(function ($routeProvider) {
-            $routeProvider.when('/test', { templateUrl: "/mainApp.html", controller: 'MainAppController', controllerAs: "ctrl" });
+            $routeProvider.when("/" + name, { templateUrl: "/" + name + ".html", controller: name + "Controller", controllerAs: "ctrl" });
         });
     };
-    MainApp.prototype.registerController = function () {
-        this.app.controller("MainAppController", MainAppController);
+    MainApp.prototype.registerController = function (name) {
+        this.app.controller(name + "Controller", MainAppController);
     };
     MainApp.moduleList = ['MainApp'];
     return MainApp;
 })();
 new MainApp();
-//angular.bootstrap(document, ["MainApp"]);
-var a = 1 + 1;
+//angular.bootstrap(document, ["MainApp"]); 
 //# sourceMappingURL=app.js.map

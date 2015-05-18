@@ -6,38 +6,40 @@ import IRouteProvider = angular.route.IRouteProvider;
 class MainAppController {
     message: string;
 
-    static $inject = [
-        '$scope'
+    static $inject = [                
     ];
 
-    constructor($scope) {
+    constructor() {
         this.message = "Ryan!";
     }
 }
 
 class MainApp {
     public app: ng.IModule;
-    private mainController: MainAppController;
 
     static moduleList = ['MainApp'];
 
     constructor() {
         this.app = angular.module("MainApp", ["ngRoute"]);
-        this.registerController();
-        this.registerRoute();
+        this.loadModule("MainApp");
     }
 
-    private registerRoute() {
+    public loadModule(name: string) {
+        this.registerController(name);
+        this.registerRoute(name);
+    }
+    
+    private registerRoute(name: string) {
         this.app.config($routeProvider => {
-            $routeProvider.when('/test', { templateUrl: "/mainApp.html", controller: 'MainAppController', controllerAs: "ctrl" });
+            $routeProvider.when(`/${name}`, { templateUrl: `/${name}.html`, controller: `${name}Controller`, controllerAs: "ctrl" });
         });
     }
-    private registerController() {
-        this.app.controller("MainAppController", MainAppController);
+
+    private registerController(name: string) {
+        this.app.controller(`${name}Controller`, MainAppController);
     }
 
 }
 
 new MainApp();
 //angular.bootstrap(document, ["MainApp"]);
-var a = 1 + 1;
