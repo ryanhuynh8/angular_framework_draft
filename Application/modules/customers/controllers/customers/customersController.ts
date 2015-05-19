@@ -1,13 +1,11 @@
-﻿module PCT.Controllers {
-    export class CustomersController {
-        private message: string;
+﻿export class CustomersController {
+    message: string;
 
-        constructor($scope , $location, $timeout, $filter, authService, dataService) {
-            this.init();            
-        }
+    constructor() {
+        this.message = "Hello from CustomersController";
+    }
 
-        init(): void {
-            this.message = "Foo!";
-        }
-    }    
+    init() {
+        return "AA";
+    }
 }

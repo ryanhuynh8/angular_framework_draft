@@ -14,10 +14,10 @@
     <!--Underscore-->
     <script src="~/Scripts/underscore/underscore-min.js"></script>    
 
-    @*<script src="/Scripts/require.js" data-main="/Application/mainscripts/app"></script>*@
-    <script src="~/Application/mainscripts/app.js"></script>
+    <script src="/Scripts/require.js" data-main="/Application/mainscripts/config"></script>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -43,10 +43,11 @@
     </div>
 </div>
 @RenderBody()
-<div ng-app="MainApp">
+
     <div ng-view>
-        Alo
+        <!-- view goes here -->
     </div>
-</div>
+
+
 </body>
 </html>

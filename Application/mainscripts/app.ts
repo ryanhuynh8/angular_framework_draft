@@ -1,46 +1,22 @@
 ﻿/// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
 /// <reference path="../../scripts/typings/angularjs/angular-route.d.ts" />
-
+/// <reference path="../modules/customers/customersmodule.ts" />
 import IRouteProvider = angular.route.IRouteProvider;
+import c = require('modules/customers/customersModule');
+import CustomersModule = c.Customers.CustomersModule;
 
-class MainAppController {
-    message: string;
-
-    static $inject = [            
-    ];
-
-    constructor() {
-        this.message = "Ryan!";
-    }
-}
-
-class MainApp {
+export class MainApp {
     public app: ng.IModule;
-
-    static moduleList = ['MainApp'];
 
     constructor() {
         this.app = angular.module("MainApp", ["ngRoute"]);
-        this.loadModule("MainApp");
-    }
-
-    public loadModule(name: string) {
-        this.registerController(name);
-        this.registerRoute(name);
-    }
-    
-    private registerRoute(name: string) {
-        this.app.config($routeProvider => {
-            $routeProvider.when(`/${name}`, { templateUrl: `/${name}.html`, controller: `${name}Controller`, controllerAs: "ctrl" });
-        });
-    }
-
-    private registerController(name: string) {
-        var consFunc = eval(`${name }Controller`);
-        this.app.controller(`${name}Controller`, consFunc);
+        var a = new CustomersModule("customers", this.app);
+        //var customerModule = new CustomersModule("customers", this.app);
+        a.init();
     }
 
 }
 
-new MainApp();
+
 //angular.bootstrap(document, ["MainApp"]);
+//# sourceMappingURL=app.js.map

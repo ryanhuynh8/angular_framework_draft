@@ -1,17 +1,13 @@
-var PCT;
-(function (PCT) {
-    var Controllers;
-    (function (Controllers) {
-        var CustomersController = (function () {
-            function CustomersController($scope, $location, $timeout, $filter, authService, dataService) {
-                this.init();
-            }
-            CustomersController.prototype.init = function () {
-                this.message = "Foo!";
-            };
-            return CustomersController;
-        })();
-        Controllers.CustomersController = CustomersController;
-    })(Controllers = PCT.Controllers || (PCT.Controllers = {}));
-})(PCT || (PCT = {}));
+define(["require", "exports"], function (require, exports) {
+    var CustomersController = (function () {
+        function CustomersController() {
+            this.message = "Hello from CustomersController";
+        }
+        CustomersController.prototype.init = function () {
+            return "AA";
+        };
+        return CustomersController;
+    })();
+    exports.CustomersController = CustomersController;
+});
 //# sourceMappingURL=customersController.js.map

@@ -191,9 +191,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Application\modules\customers\controllers\customers\customersController.bak.js" />
-    <Content Include="Application\modules\customers\views\customers\customerEdit.html" />
-    <Content Include="Application\modules\customers\views\customers\customerOrders.html" />
+    <TypeScriptCompile Include="Application\mainscripts\config.ts" />
     <Content Include="Application\modules\customers\views\customers\customers.html" />
     <Content Include="Application\modules\customers\views\orders\ordersTable.html" />
     <Content Include="Application\modules\home\configs\dependencies.js" />
@@ -227,7 +225,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="mainApp.html" />
+    <Content Include="MainApp.html" />
     <Content Include="Notes.txt" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -255,7 +253,6 @@
     <Content Include="Scripts\angular-ui-bootstrap.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\angular2\router.dev.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular-animate.min.js.map" />
@@ -269,8 +266,6 @@
     <Content Include="Scripts\angular-sanitize.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
-    <Content Include="Scripts\Breeze\breeze.bridge.angular.js" />
-    <Content Include="Scripts\Breeze\breeze.min.js" />
     <Content Include="Scripts\errors.json" />
     <EntityDeploy Include="Repository\CustomerManager.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -289,8 +284,6 @@
       <DependentUpon>CustomerManager.edmx</DependentUpon>
       <LastGenOutput>CustomerManager.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\angular2\angular2.dev.js" />
-    <Content Include="Scripts\angular2\router.dev.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1092,6 +1085,7 @@
     <TypeScriptCompile Include="Application\classes\ControllerBase.ts" />
     <TypeScriptCompile Include="Application\classes\Module.ts" />
     <TypeScriptCompile Include="Application\modules\customers\controllers\customers\customersController.ts" />
+    <TypeScriptCompile Include="Application\modules\customers\customersModule.ts" />
     <TypeScriptCompile Include="Scripts\typings\angular2\angular2.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />

@@ -1,33 +1,16 @@
-/// <reference path="../../scripts/typings/angularjs/angular.d.ts" />
-/// <reference path="../../scripts/typings/angularjs/angular-route.d.ts" />
-var MainAppController = (function () {
-    function MainAppController() {
-        this.message = "Ryan!";
-    }
-    MainAppController.$inject = [];
-    return MainAppController;
-})();
-var MainApp = (function () {
-    function MainApp() {
-        this.app = angular.module("MainApp", ["ngRoute"]);
-        this.loadModule("MainApp");
-    }
-    MainApp.prototype.loadModule = function (name) {
-        this.registerController(name);
-        this.registerRoute(name);
-    };
-    MainApp.prototype.registerRoute = function (name) {
-        this.app.config(function ($routeProvider) {
-            $routeProvider.when("/" + name, { templateUrl: "/" + name + ".html", controller: name + "Controller", controllerAs: "ctrl" });
-        });
-    };
-    MainApp.prototype.registerController = function (name) {
-        var consFunc = eval(name + "Controller");
-        this.app.controller(name + "Controller", consFunc);
-    };
-    MainApp.moduleList = ['MainApp'];
-    return MainApp;
-})();
-new MainApp();
-//angular.bootstrap(document, ["MainApp"]); 
+define(["require", "exports", 'modules/customers/customersModule'], function (require, exports, c) {
+    var CustomersModule = c.Customers.CustomersModule;
+    var MainApp = (function () {
+        function MainApp() {
+            this.app = angular.module("MainApp", ["ngRoute"]);
+            var a = new CustomersModule("customers", this.app);
+            //var customerModule = new CustomersModule("customers", this.app);
+            a.init();
+        }
+        return MainApp;
+    })();
+    exports.MainApp = MainApp;
+});
+//angular.bootstrap(document, ["MainApp"]);
+//# sourceMappingURL=app.js.map 
 //# sourceMappingURL=app.js.map
